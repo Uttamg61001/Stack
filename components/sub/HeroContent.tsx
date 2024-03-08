@@ -9,6 +9,7 @@ import {
 } from "@/utils/motion";
 import { SparklesIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
+import { Socials } from "@/constants";
 
 const HeroContent = () => {
   return (
@@ -24,7 +25,7 @@ const HeroContent = () => {
         >
           <SparklesIcon className="text-[#b49bff] mr-[10px] h-5 w-5" />
           <h1 className="Welcome-text text-[13px]">
-            Fullstack Developer Portfolio
+            Mern Stack Developer PortFoliow
           </h1>
         </motion.div>
 
@@ -33,27 +34,45 @@ const HeroContent = () => {
           className="flex flex-col gap-6 mt-6 text-6xl font-bold text-white max-w-[600px] w-auto h-auto"
         >
           <span>
-            Providing
+            Hello,It's me
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
               {" "}
-              the best{" "}
+              Uttam Singhal{" "}
             </span>
-            project exprience
+            And I'm a Developer
           </span>
         </motion.div>
 
         <motion.p
           variants={slideInFromLeft(0.8)}
-          className="text-lg text-gray-400 my-5 max-w-[600px]"
+          className="text-lg text-gray-400 my-2 max-w-[600px]"
         >
-          I&apos;m a Full Stack Software Engineer with experience in Website,
-          Mobile, and Software development. Check out my projects and skills.
+          MERN Stack Developer proficient and passionate about building dynamic web applications.
+          Skilled in MongoDB, Express.js, React.js, and Node.js.
+          Strong understanding of front-end and back-end development, REST APIs, and database management.
+          Strong problem-solving skills and collaborative nature.
         </motion.p>
+        <motion.div 
+        variants={slideInFromLeft(0.8)}
+        className="flex flex-row gap-5">
+          {Socials.map((social) => (
+            <div className=" p-2 bg-gradient-to-r  from-white to-gray-60 rounded-md">
+
+            <Image
+              src={social.src}
+              alt={social.name}
+              key={social.name}
+              width={25}
+              height={25}
+            />
+            </div>
+          ))}
+        </motion.div>
         <motion.a
           variants={slideInFromLeft(1)}
           className="py-2 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px]"
         >
-          Learn More!
+          Click Resume
         </motion.a>
       </div>
 
